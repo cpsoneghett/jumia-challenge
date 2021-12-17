@@ -15,7 +15,7 @@ public class CustomerDaoImpl implements CustomerDao {
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	private JdbcTemplate jdbcTemplate;
+	private transient JdbcTemplate jdbcTemplate;
 
 	@Override
 	public List<Customer> findAll() {

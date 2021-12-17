@@ -1,4 +1,4 @@
-package com.jumia.challenge.api.datamodel;
+package com.jumia.challenge.datamodel;
 
 import java.util.List;
 

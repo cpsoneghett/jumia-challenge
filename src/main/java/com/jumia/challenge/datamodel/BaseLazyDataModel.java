@@ -1,4 +1,4 @@
-package com.jumia.challenge.api.datamodel;
+package com.jumia.challenge.datamodel;
 
 import java.beans.IntrospectionException;
 import java.util.Collection;
@@ -17,8 +17,8 @@ import org.primefaces.model.filter.FilterConstraint;
 import org.primefaces.util.LocaleUtils;
 
 import com.jumia.challenge.api.domain.model.BaseModel;
-import com.jumia.challenge.api.utils.LazySorter;
-import com.jumia.challenge.api.utils.ShowCaseUtil;
+import com.jumia.challenge.utils.LazySorter;
+import com.jumia.challenge.utils.ShowCaseUtil;
 
 public class BaseLazyDataModel<T extends BaseModel> extends LazyDataModel<T> {
 

@@ -1,4 +1,4 @@
-package com.jumia.challenge.api.utils;
+package com.jumia.challenge.utils;
 
 import java.util.Comparator;
 
