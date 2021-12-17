@@ -2,9 +2,6 @@ package com.jumia.challenge.api.service.impl;
 
 import java.util.List;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.inject.Named;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +9,6 @@ import com.jumia.challenge.api.domain.dao.CustomerDao;
 import com.jumia.challenge.api.domain.model.Customer;
 import com.jumia.challenge.api.service.CustomerService;
 
-@Named
-@ApplicationScoped
 @Service
 public class CustomerServiceImpl implements CustomerService {
 

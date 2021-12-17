@@ -21,10 +21,6 @@ public class CustomerVo extends BaseModel {
 		BeanUtils.copyProperties(customer, this);
 	}
 
-	public String getName() {
-		return name;
-	}
-
 	public void setName(String name) {
 		this.name = name;
 	}

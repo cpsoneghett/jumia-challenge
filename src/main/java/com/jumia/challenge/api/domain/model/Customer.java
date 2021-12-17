@@ -17,23 +17,8 @@ public class Customer extends BaseModel {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", name=" + name + ", phone=" + phone + "]";
-	}
-	
-	
 
 }
