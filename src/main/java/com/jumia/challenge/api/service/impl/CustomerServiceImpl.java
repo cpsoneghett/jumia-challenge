@@ -1,25 +1,35 @@
 package com.jumia.challenge.api.service.impl;
 
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.support.rowset.SqlRowSet;
+import java.util.List;
 
+import javax.faces.bean.ApplicationScoped;
+import javax.inject.Named;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jumia.challenge.api.domain.dao.CustomerDao;
+import com.jumia.challenge.api.domain.model.Customer;
 import com.jumia.challenge.api.service.CustomerService;
 
+@Named
+@ApplicationScoped
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
-	private final JdbcTemplate jdbcTemplate;
+	private static final long serialVersionUID = 1L;
 
-	public CustomerServiceImpl(JdbcTemplate jdbcTemplate) {
-		this.jdbcTemplate = jdbcTemplate;
+	@Autowired
+	private CustomerDao customerDao;
+
+	@Override
+	public List<Customer> findAll() {
+		return customerDao.findAll();
 	}
 
 	@Override
-	public void validateTelephoneNumbers() {
-		SqlRowSet resultSet = jdbcTemplate.queryForRowSet("SELECT * FROM customer");
-		while (resultSet.next()) {
-			System.out.println(resultSet.getString("name"));
-		}
-
+	public int totalCustomersCount() {
+		return customerDao.totalCustomersCount();
 	}
 
 }

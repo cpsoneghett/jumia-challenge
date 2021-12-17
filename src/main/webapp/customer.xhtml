@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Jumia - Telephones by Country</title>
+</h:head>
+<h:body>
+	<h:form>
+		<div class="card">
+			<p:dataTable var="customer" value="#{customerView.customerDataModel}"
+				paginator="true" rows="10" paginatorPosition="bottom"
+				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				rowsPerPageTemplate="5,10,15" id="customerTable">
+
+				<p:column headerText="Country" sortBy="#{customer.countryName}"
+					filterBy="#{customer.countryName}">
+					<h:outputText value="#{customer.countryName}" />
+				</p:column>
+
+				<p:column headerText="State" sortBy="#{customer.state}"
+					filterBy="#{customer.state}">
+					<h:outputText value="#{customer.state}" />
+				</p:column>
+
+				<p:column headerText="Code" sortBy="#{customer.countryCode}"
+					filterBy="#{customer.countryCode}">
+					<h:outputText value="#{customer.countryCode}" />
+				</p:column>
+
+				<p:column headerText="Phone Number">
+					<h:outputText value="#{customer.phone}" />
+				</p:column>
+
+			</p:dataTable>
+		</div>
+	</h:form>
+</h:body>
+</html>

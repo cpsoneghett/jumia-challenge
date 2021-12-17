@@ -1,9 +1,14 @@
 package com.jumia.challenge.api.service;
 
-import org.springframework.stereotype.Service;
+import java.io.Serializable;
+import java.util.List;
 
-@Service
-public interface CustomerService {
+import com.jumia.challenge.api.domain.model.Customer;
 
-	public void validateTelephoneNumbers();
+public interface CustomerService extends Serializable {
+
+	List<Customer> findAll();
+
+	int totalCustomersCount();
+
 }

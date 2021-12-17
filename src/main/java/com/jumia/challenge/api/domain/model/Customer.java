@@ -1,24 +1,16 @@
-package com.jumia.challenge.api.domain.entity;
+package com.jumia.challenge.api.domain.model;
 
-public class Customer {
+public class Customer extends BaseModel {
 
-	private Long id;
+	private static final long serialVersionUID = 3461149946207344878L;
+
 	private String name;
 	private String phone;
 
 	public Customer(Long id, String name, String phone) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.phone = phone;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getName() {
@@ -41,5 +33,7 @@ public class Customer {
 	public String toString() {
 		return "Customer [id=" + id + ", name=" + name + ", phone=" + phone + "]";
 	}
+	
+	
 
 }

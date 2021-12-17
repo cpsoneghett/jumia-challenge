@@ -7,10 +7,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import com.jumia.challenge.api.domain.dao.CustomerDao;
-import com.jumia.challenge.api.domain.entity.Customer;
+import com.jumia.challenge.api.domain.model.Customer;
 
 @Component
 public class CustomerDaoImpl implements CustomerDao {
+
+	private static final long serialVersionUID = 1L;
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -18,13 +20,14 @@ public class CustomerDaoImpl implements CustomerDao {
 	@Override
 	public List<Customer> findAll() {
 
-		List<Customer> customers = jdbcTemplate.query("SELECT * FROM customer",
-				(resultSet, rowNum) -> new Customer(resultSet.getLong("id"), resultSet.getString("name"),
-						resultSet.getString("phone")));
+		return jdbcTemplate.query("select * from customer", (resultSet, rowNum) -> new Customer(resultSet.getLong("id"),
+				resultSet.getString("name"), resultSet.getString("phone")));
+	}
 
-		customers.forEach(System.out::println);
-
-		return customers;
+	@Override
+	public int totalCustomersCount() {
+		var sql = "select count(1) from customer";
+		return jdbcTemplate.queryForList(sql, Integer.class).get(0);
 	}
 
 }

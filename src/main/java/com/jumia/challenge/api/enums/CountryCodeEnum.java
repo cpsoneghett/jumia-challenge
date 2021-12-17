@@ -28,9 +28,18 @@ public enum CountryCodeEnum {
 		return country;
 	}
 
-	public static CountryCodeEnum getCountryCodeEnumByPhoneNumber(String phoneNumber) {
+	public static boolean validadePhoneNumberByRegex(String phoneNumber) {
 		for (CountryCodeEnum value : values()) {
 			if (phoneNumber.matches(value.regex))
+				return true;
+		}
+		return false;
+	}
+
+	public static CountryCodeEnum getCountryCodeEnumByCountryCode(int countryCode) {
+
+		for (CountryCodeEnum value : values()) {
+			if (countryCode == value.code)
 				return value;
 		}
 		return null;
