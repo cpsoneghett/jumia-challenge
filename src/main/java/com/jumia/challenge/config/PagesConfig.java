@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class PagesConfiguration {
+public class PagesConfig {
 
 	@Bean
 	ServletRegistrationBean<FacesServlet> jsfServletRegistration(ServletContext servletContext) {

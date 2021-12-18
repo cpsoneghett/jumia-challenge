@@ -1,6 +1,5 @@
 package com.jumia.challenge.api.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.util.List;
@@ -29,11 +28,4 @@ class CustomerServiceTest {
 		}
 	}
 
-	@Test
-	void gettingTotalNumberOfCustomersTest() {
-
-		int totalNumberOfCustomers = customerService.totalCustomersCount();
-
-		assertEquals(41, totalNumberOfCustomers);
-	}
 }

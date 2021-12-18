@@ -24,6 +24,10 @@ public enum CountryCodeEnum {
 		return country;
 	}
 
+	public String getRegex() {
+		return regex;
+	}
+
 	public static boolean validadePhoneNumberByRegex(String phoneNumber) {
 		for (CountryCodeEnum value : values()) {
 			if (value.regex != null && phoneNumber.matches(value.regex))

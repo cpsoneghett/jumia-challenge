@@ -4,13 +4,11 @@ import java.util.Objects;
 
 import org.springframework.beans.BeanUtils;
 
-import com.jumia.challenge.api.domain.model.BaseModel;
 import com.jumia.challenge.api.domain.model.Customer;
 
-public class CustomerVo extends BaseModel {
+public class CustomerVo {
 
-	private static final long serialVersionUID = 1063888524010314596L;
-
+	private Long id;
 	private String name;
 	private String phone;
 	private String countryName;
@@ -19,6 +17,14 @@ public class CustomerVo extends BaseModel {
 
 	public CustomerVo(Customer customer) {
 		BeanUtils.copyProperties(customer, this);
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public void setName(String name) {

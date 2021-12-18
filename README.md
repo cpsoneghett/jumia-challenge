@@ -11,12 +11,12 @@ This project is a simple project designed to list and categorize country phone n
 ### Running the application
 ***
 
-1. With Maven:
+1- With Maven:
 
 For running this way, you must have Maven 3.6.x and Java JDK 11+ installed and all the environment variables set up.
 
 - First of all, clone the repository with the command and then move inside the directory
-
+	
 ```
  > git clone https://github.com/cpsoneghett/jumia-challenge.git
 ```
@@ -24,9 +24,9 @@ For running this way, you must have Maven 3.6.x and Java JDK 11+ installed and a
 ```
  > cd jumia-challenge
 ```
-
+	
 - Then, compile and generate the application .war package and, finally, run the package
-
+	
 ```
  > mvn clean package
 ```
@@ -34,11 +34,13 @@ For running this way, you must have Maven 3.6.x and Java JDK 11+ installed and a
 ```
  > mvn spring-boot:run
 ```
+	
 - To see the page, you can just access the page [http://localhost:8080/customer.xhtml](http://localhost:8080/customer.xhtml).
 
-1. With Docker:
 
-For running this way, you must have Docker installed.
+2- With Docker:
+
+For running this way, you must have Docker installed and you must build the project with `mvn clean package`.
 
 - First of all, the following command is used to build the docker image (attention: must include . at the end)
 

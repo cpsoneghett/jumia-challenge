@@ -2,10 +2,15 @@ package com.jumia.challenge.api.domain.model;
 
 import java.io.Serializable;
 
-public class BaseModel implements Serializable {
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public abstract class BaseModel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
+	@Id
 	protected Long id;
 
 	public Long getId() {

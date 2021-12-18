@@ -16,35 +16,18 @@ import org.primefaces.model.SortMeta;
 import org.primefaces.model.filter.FilterConstraint;
 import org.primefaces.util.LocaleUtils;
 
-import com.jumia.challenge.api.domain.model.BaseModel;
 import com.jumia.challenge.utils.LazySorter;
 import com.jumia.challenge.utils.ShowCaseUtil;
 
-public class BaseLazyDataModel<T extends BaseModel> extends LazyDataModel<T> {
+public class AbstractLazyDataModel<T> extends LazyDataModel<T> {
 
 	private static final long serialVersionUID = 1L;
 
 	private List<T> datasource;
 
-	public BaseLazyDataModel(List<T> datasource) {
+	public AbstractLazyDataModel(List<T> datasource) {
 		super();
 		this.datasource = datasource;
-	}
-
-	@Override
-	public T getRowData(String rowKey) {
-		for (T data : datasource) {
-			if (data.getId() == Integer.parseInt(rowKey)) {
-				return data;
-			}
-		}
-
-		return null;
-	}
-
-	@Override
-	public String getRowKey(T t) {
-		return String.valueOf(t.getId());
 	}
 
 	@Override
@@ -56,8 +39,7 @@ public class BaseLazyDataModel<T extends BaseModel> extends LazyDataModel<T> {
 	@Override
 	public List<T> load(int first, int pageSize, Map<String, SortMeta> sortBy, Map<String, FilterMeta> filterBy) {
 
-		List<T> customers = datasource.stream()
-				.skip(first)
+		List<T> customers = datasource.stream().skip(first)
 				.filter(o -> filter(FacesContext.getCurrentInstance(), filterBy.values(), o)).limit(pageSize)
 				.collect(Collectors.toList());
 
@@ -92,6 +74,10 @@ public class BaseLazyDataModel<T extends BaseModel> extends LazyDataModel<T> {
 		}
 
 		return matching;
+	}
+
+	public List<T> getDatasource() {
+		return datasource;
 	}
 
 }

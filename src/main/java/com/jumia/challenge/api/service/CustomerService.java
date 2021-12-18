@@ -9,6 +9,4 @@ public interface CustomerService extends Serializable {
 
 	List<Customer> findAll();
 
-	int totalCustomersCount();
-
 }
