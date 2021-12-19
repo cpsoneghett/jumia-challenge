@@ -2,6 +2,10 @@ package com.jumia.challenge.api.domain.model;
 
 import javax.persistence.Entity;
 
+import org.springframework.beans.BeanUtils;
+
+import com.jumia.challenge.api.domain.vo.CustomerVo;
+
 @Entity
 public class Customer extends BaseModel {
 
@@ -17,6 +21,10 @@ public class Customer extends BaseModel {
 		this.id = id;
 		this.name = name;
 		this.phone = phone;
+	}
+
+	public Customer(CustomerVo customerVo) {
+		BeanUtils.copyProperties(customerVo, this);
 	}
 
 	public String getName() {

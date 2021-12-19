@@ -1,6 +1,8 @@
 package com.jumia.challenge.api.service.mapper;
 
-public interface AbstractMapper<T, U> {
+import java.io.Serializable;
+
+public interface AbstractMapper<T, U> extends Serializable {
 
 	public U sourceToDestination(T source);
 

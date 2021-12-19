@@ -13,6 +13,8 @@ import com.jumia.challenge.api.service.PhoneValidatorService;
 @Component
 public class CustomerVoMapper implements AbstractMapper<List<Customer>, List<CustomerVo>> {
 
+	private static final long serialVersionUID = 1L;
+
 	@Autowired
 	private PhoneValidatorService phoneValidatorService;
 
@@ -31,7 +33,11 @@ public class CustomerVoMapper implements AbstractMapper<List<Customer>, List<Cus
 	@Override
 	public List<Customer> destinationToSource(List<CustomerVo> destination) {
 
-		return null;
+		List<Customer> customers = new ArrayList<>();
+
+		destination.forEach(Customer::new);
+
+		return customers;
 	}
 
 }

@@ -8,6 +8,8 @@ import com.jumia.challenge.validation.phone.CountryPhoneValidator;
 @Component
 public class EthiopiaValidator implements CountryPhoneValidator {
 
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public boolean validate(CountryCodeEnum countryCodeEnum, String phoneNumber) {
 		return countryCodeEnum.getRegex() != null && phoneNumber.matches(countryCodeEnum.getRegex());

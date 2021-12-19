@@ -1,5 +1,6 @@
 package com.jumia.challenge.validation.phone;
 
+import java.io.Serializable;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Set;
@@ -11,7 +12,9 @@ import com.jumia.challenge.api.enums.CountryCodeEnum;
 import com.jumia.challenge.exception.CountryValidatorNotFoundException;
 
 @Component
-public class CountryPhoneFactory {
+public class CountryPhoneFactory implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private Map<CountryCodeEnum, CountryPhoneValidator> strategies;
 
