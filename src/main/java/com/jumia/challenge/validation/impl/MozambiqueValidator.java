@@ -1,8 +1,11 @@
 package com.jumia.challenge.validation.impl;
 
+import org.springframework.stereotype.Component;
+
 import com.jumia.challenge.api.enums.CountryCodeEnum;
 import com.jumia.challenge.validation.phone.CountryPhoneValidator;
 
+@Component
 public class MozambiqueValidator implements CountryPhoneValidator {
 
 	@Override
